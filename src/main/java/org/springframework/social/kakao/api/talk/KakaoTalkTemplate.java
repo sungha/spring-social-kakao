@@ -1,8 +1,7 @@
-package kr.steelheart.user.provider.kakao.api.talk;
+package org.springframework.social.kakao.api.talk;
 
 
-import kr.steelheart.user.provider.kakao.api.AbstractKakaoOperations;
-import kr.steelheart.user.provider.kakao.api.talk.model.KakaoTalkProfile;
+import org.springframework.social.kakao.api.AbstractKakaoOperations;
 
 
 public class KakaoTalkTemplate extends AbstractKakaoOperations implements KakaoTalkOperations {

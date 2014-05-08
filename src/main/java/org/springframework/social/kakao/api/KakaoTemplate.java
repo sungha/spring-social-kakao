@@ -1,10 +1,10 @@
-package kr.steelheart.user.provider.kakao.api;
+package org.springframework.social.kakao.api;
 
 
 
-import kr.steelheart.user.provider.kakao.api.talk.KakaoTalkOperations;
-import kr.steelheart.user.provider.kakao.api.talk.KakaoTalkTemplate;
 
+import org.springframework.social.kakao.api.talk.KakaoTalkOperations;
+import org.springframework.social.kakao.api.talk.KakaoTalkTemplate;
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 
 

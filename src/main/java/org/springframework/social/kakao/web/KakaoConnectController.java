@@ -1,4 +1,4 @@
-package kr.steelheart.user.provider.kakao.web;
+package org.springframework.social.kakao.web;
 
 
 import javax.servlet.http.HttpServletRequest;

@@ -67,15 +67,6 @@
 		<springframework.security.version>3.2.3.RELEASE</springframework.security.version>
 
 		<springframework.social.version>1.1.0.RELEASE</springframework.social.version>
-		<springframework.social.facebook.version>1.1.1.RELEASE</springframework.social.facebook.version>
-		<springframework.social.twitter.version>1.1.0.RELEASE</springframework.social.twitter.version>
-		<springframework.social.linkedin.version>1.0.1.RELEASE</springframework.social.linkedin.version>
-		<springframework.social.github.version>1.0.0.M3</springframework.social.github.version>
-		<springframework.social.google.version>1.0.0.M3</springframework.social.google.version>
-
-		<springframework.data.commons.version>1.8.0.RC1</springframework.data.commons.version>
-		<springframework.data.jpa.version>1.6.0.RC1</springframework.data.jpa.version>
-		<springframework.data.rest.version>2.1.0.RC1</springframework.data.rest.version>
 		<springframework.hateoas.version>0.11.0.RELEASE</springframework.hateoas.version>
 
 		<com.fasterxml.jackson.version>2.4.0-rc2</com.fasterxml.jackson.version>
@@ -96,10 +87,6 @@
 		</repository>
 
 	</repositories>
-
-
-
-
 
 
 
@@ -146,7 +133,6 @@
 		</dependency>
 
 
-		<!-- == LOGGING == -->
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -174,70 +160,7 @@
 			<version>${logback.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.codehaus.janino</groupId>
-			<artifactId>janino</artifactId>
-			<version>2.6.1</version>
-		</dependency>
 
-
-
-		<!-- == SPRING == -->
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${springframework.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-websocket</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-messaging</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectreactor</groupId>
-			<artifactId>reactor-tcp</artifactId>
-			<version>1.1.0.M1</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-webmvc</artifactId>
-			<version>${springframework.data.rest.version}</version>
-		</dependency>
-
-
-
-		<!-- == SECURITY == -->
 
 
 		<dependency>
@@ -255,14 +178,8 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>${springframework.security.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
 
 
-		<!-- ============== SOCIAL ======================== -->
 
 
 		<dependency>
@@ -312,90 +229,6 @@
 		</dependency>
 
 
-
-		<!-- == COMMONS == -->
-
-
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.3.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.9</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.3.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-digester3</artifactId>
-			<version>3.2</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-validator</groupId>
-			<artifactId>commons-validator</artifactId>
-			<version>1.4.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>3.1</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>oro</groupId>
-			<artifactId>oro</artifactId>
-			<version>2.0.8</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.3.3</version>
-		</dependency>
-
-
 	</dependencies>
 
 
@@ -406,23 +239,6 @@
 
 
 		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-				<version>2.5.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-			</plugin>
-
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -444,16 +260,6 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.16</version>
-				<configuration>
-					<skip>${maven.test.skip}</skip>
-					<testFailureIgnore>${maven.test.failure.ignore}</testFailureIgnore>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
@@ -465,11 +271,30 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.5</version>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
-
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 
 

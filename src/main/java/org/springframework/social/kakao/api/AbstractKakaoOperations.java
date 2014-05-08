@@ -1,4 +1,4 @@
-package kr.steelheart.user.provider.kakao.api;
+package org.springframework.social.kakao.api;
 
 
 import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;

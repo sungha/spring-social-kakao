@@ -1,4 +1,4 @@
-package kr.steelheart.user.provider.kakao.connect;
+package org.springframework.social.kakao.connect;
 
 
 import org.springframework.social.oauth2.AccessGrant;

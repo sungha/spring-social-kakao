@@ -1,4 +1,4 @@
-package kr.steelheart.user.provider.kakao.api.talk.model;
+package org.springframework.social.kakao.api.talk;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;

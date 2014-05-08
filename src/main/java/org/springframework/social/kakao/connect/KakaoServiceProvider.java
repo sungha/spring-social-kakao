@@ -1,9 +1,9 @@
-package kr.steelheart.user.provider.kakao.connect;
+package org.springframework.social.kakao.connect;
 
 
-import kr.steelheart.user.provider.kakao.api.Kakao;
-import kr.steelheart.user.provider.kakao.api.KakaoTemplate;
 
+import org.springframework.social.kakao.api.Kakao;
+import org.springframework.social.kakao.api.KakaoTemplate;
 import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 
 

@@ -1,13 +1,13 @@
-package kr.steelheart.user.provider.kakao.connect;
+package org.springframework.social.kakao.connect;
 
 
-import kr.steelheart.user.provider.kakao.api.Kakao;
-import kr.steelheart.user.provider.kakao.api.talk.model.KakaoTalkProfile;
 
 import org.springframework.social.connect.ApiAdapter;
 import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
+import org.springframework.social.kakao.api.Kakao;
+import org.springframework.social.kakao.api.talk.KakaoTalkProfile;
 
 
 public class KakaoAdapter implements ApiAdapter<Kakao> {
