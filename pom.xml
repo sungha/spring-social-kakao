@@ -31,6 +31,8 @@
 	</developers>
 
 
+	<inceptionYear>2014</inceptionYear>
+
 
 	<licenses>
 		<license>
@@ -49,28 +51,28 @@
 	</issueManagement>
 
 
-	<inceptionYear>2014</inceptionYear>
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<url>file://${project.build.directory}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
+
 
 
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.6</java.version>
 
-		<maven.test.skip>false</maven.test.skip>
-		<maven.test.failure.ignore>true</maven.test.failure.ignore>
+		<github.global.server>github</github.global.server>
 
 		<slf4j.version>1.7.7</slf4j.version>
 		<logback.version>1.1.2</logback.version>
 
 		<springframework.version>4.0.4.RELEASE</springframework.version>
-		<springframework.security.version>3.2.3.RELEASE</springframework.security.version>
-
 		<springframework.social.version>1.1.0.RELEASE</springframework.social.version>
-		<springframework.hateoas.version>0.11.0.RELEASE</springframework.hateoas.version>
-
-		<com.fasterxml.jackson.version>2.4.0-rc2</com.fasterxml.jackson.version>
-
+		<com.fasterxml.jackson.version>2.4.0-rc3</com.fasterxml.jackson.version>
 	</properties>
 
 
@@ -110,12 +112,6 @@
 			<groupId>org.easytesting</groupId>
 			<artifactId>fest-assert-core</artifactId>
 			<version>2.0M10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>xmlunit</groupId>
-			<artifactId>xmlunit</artifactId>
-			<version>1.5</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -163,23 +159,6 @@
 
 
 
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${springframework.security.version}</version>
-		</dependency>
-
-
 
 
 		<dependency>
@@ -189,39 +168,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-config</artifactId>
-			<version>${springframework.social.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-web</artifactId>
 			<version>${springframework.social.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.social</groupId>
-			<artifactId>spring-social-security</artifactId>
-			<version>${springframework.social.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.hateoas</groupId>
-			<artifactId>spring-hateoas</artifactId>
-			<version>${springframework.hateoas.version}</version>
-		</dependency>
 
 
 
-
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>${com.fasterxml.jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${com.fasterxml.jackson.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
@@ -239,6 +191,41 @@
 
 
 		<plugins>
+
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.1</version>
+				<configuration>
+					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+					<uniqueVersion>false</uniqueVersion>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<message>${project.version}</message>
+					<noJekyll>true</noJekyll>
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+					<branch>refs/heads/master</branch>
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<merge>true</merge>
+					<repositoryName>maven</repositoryName>
+					<repositoryOwner>sungha</repositoryOwner>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -282,19 +269,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.8.1</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+
 		</plugins>
 
 

@@ -4,12 +4,12 @@ package org.springframework.social.kakao.api.talk;
 import org.springframework.social.kakao.api.AbstractKakaoOperations;
 
 
-public class KakaoTalkTemplate extends AbstractKakaoOperations implements KakaoTalkOperations {
+public final class TalkTemplate extends AbstractKakaoOperations implements TalkOperations {
 
 	private static final String	PROFILE_REQUEST_URL	= API_HOST + "/v1/api/talk/profile";
 
 
-	public KakaoTalkTemplate(final String accessToken) {
+	public TalkTemplate(final String accessToken) {
 		super(accessToken);
 	}
 

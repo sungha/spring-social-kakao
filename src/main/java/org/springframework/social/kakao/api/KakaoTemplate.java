@@ -1,28 +1,45 @@
 package org.springframework.social.kakao.api;
 
 
+import org.springframework.social.kakao.api.story.StoryOperations;
+import org.springframework.social.kakao.api.story.StoryTemplate;
+import org.springframework.social.kakao.api.talk.TalkOperations;
+import org.springframework.social.kakao.api.talk.TalkTemplate;
+import org.springframework.social.kakao.api.user.UserOperations;
+import org.springframework.social.kakao.api.user.UserTemplate;
 
 
-import org.springframework.social.kakao.api.talk.KakaoTalkOperations;
-import org.springframework.social.kakao.api.talk.KakaoTalkTemplate;
-import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
+public class KakaoTemplate implements Kakao {
 
+	private UserOperations	userOperations;
 
-public class KakaoTemplate extends AbstractOAuth2ApiBinding implements Kakao {
+	private TalkOperations	talkOperations;
 
-	private KakaoTalkOperations	kakaoTalkOperations;
+	private StoryOperations	storyOperations;
 
 
 	public KakaoTemplate(final String accessToken) {
-		super(accessToken);
-		kakaoTalkOperations = new KakaoTalkTemplate(accessToken);
+		userOperations = new UserTemplate(accessToken);
+		talkOperations = new TalkTemplate(accessToken);
+		storyOperations = new StoryTemplate(accessToken);
 	}
 
 
 	@Override
-	public KakaoTalkOperations kakaoTalkOperations() {
-		return kakaoTalkOperations;
+	public UserOperations userOperations() {
+		return userOperations;
 	}
 
+
+	@Override
+	public TalkOperations talkOperations() {
+		return talkOperations;
+	}
+
+
+	@Override
+	public StoryOperations storyOperations() {
+		return storyOperations;
+	}
 
 }

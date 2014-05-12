@@ -1,10 +1,17 @@
 package org.springframework.social.kakao.api;
 
 
-import org.springframework.social.kakao.api.talk.KakaoTalkOperations;
+import org.springframework.social.kakao.api.story.StoryOperations;
+import org.springframework.social.kakao.api.talk.TalkOperations;
+import org.springframework.social.kakao.api.user.UserOperations;
 
 
 public interface Kakao {
 
-	KakaoTalkOperations kakaoTalkOperations();
+	UserOperations userOperations();
+
+	TalkOperations talkOperations();
+
+	StoryOperations storyOperations();
+
 }

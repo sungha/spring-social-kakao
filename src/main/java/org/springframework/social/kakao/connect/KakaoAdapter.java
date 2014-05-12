@@ -7,7 +7,7 @@ import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.kakao.api.Kakao;
-import org.springframework.social.kakao.api.talk.KakaoTalkProfile;
+import org.springframework.social.kakao.api.user.KakaoUserProfile;
 
 
 public class KakaoAdapter implements ApiAdapter<Kakao> {
@@ -20,18 +20,18 @@ public class KakaoAdapter implements ApiAdapter<Kakao> {
 
 	@Override
 	public void setConnectionValues(final Kakao api, final ConnectionValues values) {
-		KakaoTalkProfile profile = api.kakaoTalkOperations().getProfile();
+		KakaoUserProfile profile = api.userOperations().getProfile();
 
 		values.setDisplayName(profile.getNickname());
 		values.setImageUrl(profile.getThumbnail());
 		values.setProfileUrl(profile.getProfile());
-		values.setProviderUserId(Integer.toString(profile.getProfile().hashCode()));
+		values.setProviderUserId(Integer.toString(profile.getId()));
 	}
 
 
 	@Override
 	public UserProfile fetchUserProfile(final Kakao api) {
-		KakaoTalkProfile profile = api.kakaoTalkOperations().getProfile();
+		KakaoUserProfile profile = api.userOperations().getProfile();
 
 		//@formatter:off
 		return
