@@ -34,7 +34,7 @@ public class KakaoOAuth2Template extends OAuth2Template {
 
 	@Override
 	public String buildAuthenticateUrl(final OAuth2Parameters parameters) {
-		parameters.setRedirectUri(domain + "/oauth");
+		parameters.setRedirectUri(domain + "/signin/kakao");
 		parameters.add("grant_type", "authorization_code");
 		parameters.add("client_id", clientId);
 
@@ -44,7 +44,7 @@ public class KakaoOAuth2Template extends OAuth2Template {
 
 	@Override
 	public String buildAuthorizeUrl(final GrantType grantType, final OAuth2Parameters parameters) {
-		parameters.setRedirectUri(domain + "/oauth");
+		parameters.setRedirectUri(domain + "/signin/kakao");
 
 		return super.buildAuthorizeUrl(grantType, parameters);
 	}
@@ -53,7 +53,7 @@ public class KakaoOAuth2Template extends OAuth2Template {
 
 	@Override
 	protected AccessGrant postForAccessGrant(final String accessTokenUrl, final MultiValueMap<String, String> parameters) {
-		parameters.set("redirect_uri", domain + "/oauth");
+		parameters.set("redirect_uri", domain + "/signin/kakao");
 
 		return super.postForAccessGrant(accessTokenUrl, parameters);
 	}
