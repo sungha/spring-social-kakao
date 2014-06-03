@@ -1,6 +1,11 @@
 package org.springframework.social.kakao.api.talk;
 
 
+import java.net.URL;
+
+import lombok.Getter;
+import lombok.Setter;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,50 +13,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonAutoDetect
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Getter
+@Setter
 public class KakaoTalkProfile {
 
 	@JsonProperty("nickName")
 	private String	nickname;
 
 	@JsonProperty("thumbnailURL")
-	private String	thumbnail;
+	private URL		thumbnail;
 
 	@JsonProperty("profileImageURL")
-	private String	profile;
+	private URL		profile;
 
 	@JsonProperty("countryISO")
 	private String	country;
-
-	public String getNickname() {
-		return nickname;
-	}
-
-	public void setNickname(final String nickname) {
-		this.nickname = nickname;
-	}
-
-	public String getThumbnail() {
-		return thumbnail;
-	}
-
-	public void setThumbnail(final String thumbnail) {
-		this.thumbnail = thumbnail;
-	}
-
-	public String getProfile() {
-		return profile;
-	}
-
-	public void setProfile(final String profile) {
-		this.profile = profile;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(final String country) {
-		this.country = country;
-	}
 
 }

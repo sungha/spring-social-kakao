@@ -7,6 +7,7 @@ import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.kakao.api.Kakao;
+import org.springframework.social.kakao.api.talk.KakaoTalkProfile;
 import org.springframework.social.kakao.api.user.KakaoUserProfile;
 
 
@@ -20,24 +21,26 @@ public class KakaoAdapter implements ApiAdapter<Kakao> {
 
 	@Override
 	public void setConnectionValues(final Kakao api, final ConnectionValues values) {
-		KakaoUserProfile profile = api.userOperations().getProfile();
+		KakaoUserProfile userProfile = api.userOperations().getProfile();
+		KakaoTalkProfile talkProfile = api.talkOperations().getProfile();
 
-		values.setDisplayName(profile.getNickname());
-		values.setImageUrl(profile.getThumbnail());
-		values.setProfileUrl(profile.getProfile());
-		values.setProviderUserId(Integer.toString(profile.getId()));
+		values.setProviderUserId(Integer.toString(userProfile.getId()));
+		values.setDisplayName(talkProfile.getNickname());
+
+		values.setImageUrl(talkProfile.getProfile().toString());
+		values.setProfileUrl(null); // 아직 카카오스토리 웹버전에 대한 링크주소 또는 아이디를 가져오는 API는 없는듯.
 	}
 
 
 	@Override
 	public UserProfile fetchUserProfile(final Kakao api) {
-		KakaoUserProfile profile = api.userOperations().getProfile();
+		KakaoTalkProfile talkProfile = api.talkOperations().getProfile();
 
 		//@formatter:off
 		return
 				new UserProfileBuilder()
-					.setName(profile.getNickname())
-					.setUsername(profile.getNickname())
+					.setName(talkProfile.getNickname())
+					.setUsername(talkProfile.getNickname())
 					.build();
 		//@formatter:on
 	}

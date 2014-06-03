@@ -1,6 +1,9 @@
 package org.springframework.social.kakao.api.user;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonAutoDetect
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Getter
+@Setter
 public class KakaoUserProfile {
 
 	@JsonProperty("id")
@@ -16,10 +21,7 @@ public class KakaoUserProfile {
 	@JsonProperty("properties")
 	private Properties	properties	= new Properties();
 
-	public Integer getId() {
-		return id;
-	}
-
+	
 	public String getNickname() {
 		return getProperties().getNickname();
 	}
@@ -32,12 +34,11 @@ public class KakaoUserProfile {
 		return getProperties().getProfile();
 	}
 
-	public Properties getProperties() {
-		return properties;
-	}
-
+	
 	@JsonAutoDetect
 	@JsonIgnoreProperties(ignoreUnknown = true)
+	@Getter
+	@Setter
 	public class Properties {
 
 		@JsonProperty("nickname")
@@ -49,17 +50,6 @@ public class KakaoUserProfile {
 		@JsonProperty("profile_image")
 		private String	profile;
 
-		public String getNickname() {
-			return nickname;
-		}
-
-		public String getProfile() {
-			return profile;
-		}
-
-		public String getThumbnail() {
-			return thumbnail;
-		}
 	}
 
 }

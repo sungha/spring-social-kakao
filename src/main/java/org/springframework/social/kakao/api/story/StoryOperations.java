@@ -5,10 +5,14 @@ package org.springframework.social.kakao.api.story;
 
 public interface StoryOperations {
 
-	void getProfile();
+	KakaoStoryProfile getProfile();
 
+	//TODO
 	void upload();
 
+	//TODO
 	void post();
+	
+	//AND MORE
 
 }

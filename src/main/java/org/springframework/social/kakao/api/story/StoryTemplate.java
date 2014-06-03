@@ -15,9 +15,8 @@ public final class StoryTemplate extends AbstractKakaoOperations implements Stor
 
 
 	@Override
-	public void getProfile() {
-		// TODO Auto-generated method stub
-
+	public KakaoStoryProfile getProfile() {
+		return getRestTemplate().getForObject(PROFILE_REQUEST_URL, KakaoStoryProfile.class);
 	}
 
 

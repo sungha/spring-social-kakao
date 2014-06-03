@@ -5,50 +5,6 @@
 	<groupId>kr.steelheart</groupId>
 	<artifactId>spring-social-kakao</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
-	<name>spring-social-kakao</name>
-	<description>
-	</description>
-
-
-	<prerequisites>
-		<maven>2.2.1</maven>
-	</prerequisites>
-
-
-
-	<url>http://steelheart.kr</url>
-
-	<developers>
-		<developer>
-			<name>Sungha Jun (aka steelheart/sh)</name>
-			<url>http://steelheart.kr</url>
-			<roles>
-				<role>developer</role>
-			</roles>
-		</developer>
-	</developers>
-
-
-	<inceptionYear>2014</inceptionYear>
-
-
-	<licenses>
-		<license>
-			<name>MIT License</name>
-			<url>http://www.opensource.org/licenses/mit-license.php</url>
-		</license>
-	</licenses>
-
-	<scm>
-		<url>scm:git:https://github.com/sungha/spring-social-kakao</url>
-	</scm>
-
-	<issueManagement>
-		<system>github</system>
-		<url>https://github.com/sungha/spring-social-kakao/issues</url>
-	</issueManagement>
 
 
 	<distributionManagement>
@@ -64,37 +20,24 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.6</java.version>
+		<java.version>1.7</java.version>
 
 		<github.global.server>github</github.global.server>
 
-		<slf4j.version>1.7.7</slf4j.version>
-		<logback.version>1.1.2</logback.version>
-
-		<springframework.version>4.0.4.RELEASE</springframework.version>
+		<springframework.version>4.0.5.RELEASE</springframework.version>
 		<springframework.social.version>1.1.0.RELEASE</springframework.social.version>
-		<com.fasterxml.jackson.version>2.4.0-rc3</com.fasterxml.jackson.version>
+		<com.fasterxml.jackson.version>2.4.0</com.fasterxml.jackson.version>
 	</properties>
 
 
-
-
-	<repositories>
-
-		<repository>
-			<id>spring-milestone</id>
-			<url>http://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-
-	</repositories>
-
-
-
-
 	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.14.0</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -102,63 +45,6 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.easytesting</groupId>
-			<artifactId>fest-assert-core</artifactId>
-			<version>2.0M10</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.9.5</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${springframework.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-		</dependency>
-
-
-
 
 
 
@@ -187,9 +73,6 @@
 
 
 	<build>
-
-		<finalName>${project.artifactId}</finalName>
-
 
 		<plugins>
 
