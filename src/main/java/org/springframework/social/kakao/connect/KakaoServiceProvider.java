@@ -3,7 +3,7 @@ package org.springframework.social.kakao.connect;
 
 
 import org.springframework.social.kakao.api.Kakao;
-import org.springframework.social.kakao.api.KakaoTemplate;
+import org.springframework.social.kakao.api.impl.KakaoTemplate;
 import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 
 

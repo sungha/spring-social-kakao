@@ -1,18 +1,12 @@
-package org.springframework.social.kakao.api.story;
+package org.springframework.social.kakao.api.model;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
-@Getter
-@Setter
+@Data
 public class KakaoStoryProfile {
 
 	public static enum BirthdayType {
@@ -36,7 +30,6 @@ public class KakaoStoryProfile {
 
 	@JsonProperty("birthdayType")
 	private BirthdayType	birthdayType;
-
 
 
 }

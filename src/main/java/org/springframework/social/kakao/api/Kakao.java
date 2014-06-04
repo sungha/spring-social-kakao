@@ -1,17 +1,38 @@
 package org.springframework.social.kakao.api;
 
 
-import org.springframework.social.kakao.api.story.StoryOperations;
-import org.springframework.social.kakao.api.talk.TalkOperations;
-import org.springframework.social.kakao.api.user.UserOperations;
 
-
+/**
+ * <pre>
+ * Kakao REST API
+ * </pre>
+ * 
+ * @author sungha
+ */
 public interface Kakao {
 
+	/**
+	 * 카카오 사용자 API
+	 * @return
+	 */
 	UserOperations userOperations();
 
+	/**
+	 * 카카오톡 API
+	 * @return
+	 */
 	TalkOperations talkOperations();
 
+	/**
+	 * 카카오스토리 API
+	 * @return
+	 */
 	StoryOperations storyOperations();
+	
+	/**
+	 * 푸쉬알림 API
+	 * @return
+	 */
+	PushOperations pushOperations();
 
 }

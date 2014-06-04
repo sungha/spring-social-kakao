@@ -7,8 +7,8 @@ import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.kakao.api.Kakao;
-import org.springframework.social.kakao.api.talk.KakaoTalkProfile;
-import org.springframework.social.kakao.api.user.KakaoUserProfile;
+import org.springframework.social.kakao.api.model.KakaoTalkProfile;
+import org.springframework.social.kakao.api.model.KakaoUserProfile;
 
 
 public class KakaoAdapter implements ApiAdapter<Kakao> {

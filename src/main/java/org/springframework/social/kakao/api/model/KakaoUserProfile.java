@@ -1,27 +1,30 @@
-package org.springframework.social.kakao.api.user;
+package org.springframework.social.kakao.api.model;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
-@Getter
-@Setter
+/**
+ * <pre>
+ * 카카오 프로필
+ * </pre>
+ * 
+ * @author sungha
+ */
+@Data
 public class KakaoUserProfile {
 
+	/** 사용자 고유식별번호 */
 	@JsonProperty("id")
 	private Integer		id;
 
+	/** 사용자 속성 정보 */
 	@JsonProperty("properties")
 	private Properties	properties	= new Properties();
 
-	
+
 	public String getNickname() {
 		return getProperties().getNickname();
 	}
@@ -34,21 +37,28 @@ public class KakaoUserProfile {
 		return getProperties().getProfile();
 	}
 
-	
-	@JsonAutoDetect
-	@JsonIgnoreProperties(ignoreUnknown = true)
-	@Getter
-	@Setter
+
+	/**
+	 * <pre>
+	 * 사용자 상세 속성 정보
+	 * </pre>
+	 * 
+	 * @author sungha
+	 */
+	@Data
 	public class Properties {
 
+		/** 대화명 */
 		@JsonProperty("nickname")
 		private String	nickname;
 
-		@JsonProperty("thumbnail_image")
-		private String	thumbnail;
-
+		/** 프로필 이미지 원본 URL */
 		@JsonProperty("profile_image")
 		private String	profile;
+
+		/** 프로필 이미지 썸네일 URL */
+		@JsonProperty("thumbnail_image")
+		private String	thumbnail;
 
 	}
 
