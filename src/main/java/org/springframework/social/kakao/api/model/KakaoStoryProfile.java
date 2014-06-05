@@ -1,6 +1,8 @@
 package org.springframework.social.kakao.api.model;
 
 
+import java.net.URL;
+
 import lombok.Data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,13 +19,13 @@ public class KakaoStoryProfile {
 	private String			nickname;
 
 	@JsonProperty("profileImageURL")
-	private String			profile;
+	private URL			profile;
 
 	@JsonProperty("thumbnailURL")
-	private String			thumbnail;
+	private URL			thumbnail;
 
 	@JsonProperty("bgImageURL")
-	private String			background;
+	private URL			background;
 
 	@JsonProperty("birthday")
 	private String			birthday;
