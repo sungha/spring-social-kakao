@@ -2,6 +2,7 @@ package org.springframework.social.kakao.api;
 
 
 
+
 /**
  * <pre>
  * Kakao REST API
@@ -10,6 +11,9 @@ package org.springframework.social.kakao.api;
  * @author sungha
  */
 public interface Kakao {
+	
+	public static final String PROVIDER_ID = "kakao";
+	
 
 	/**
 	 * 카카오 사용자 API
@@ -34,5 +38,6 @@ public interface Kakao {
 	 * @return
 	 */
 	PushOperations pushOperations();
+	
 
 }

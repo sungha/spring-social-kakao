@@ -8,7 +8,7 @@ import org.springframework.social.kakao.api.TalkOperations;
 import org.springframework.social.kakao.api.UserOperations;
 
 
-public class KakaoTemplate implements Kakao {
+public class KakaoTemplate extends AbstractKakaoOperations implements Kakao {
 
 	private UserOperations	userOperations;
 
@@ -20,6 +20,8 @@ public class KakaoTemplate implements Kakao {
 
 
 	public KakaoTemplate(final String accessToken) {
+		super(accessToken);
+		
 		userOperations = new UserTemplate(accessToken);
 		talkOperations = new TalkTemplate(accessToken);
 		storyOperations = new StoryTemplate(accessToken);

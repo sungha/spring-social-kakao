@@ -6,4 +6,3 @@ spring-social-kakao ![Build Status](https://secure.travis-ci.org/sungha/spring-s
 > https://developers.kakao.com/docs/restapi
 
 
-

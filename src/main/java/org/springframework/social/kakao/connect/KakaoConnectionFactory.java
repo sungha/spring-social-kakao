@@ -9,8 +9,8 @@ import org.springframework.social.kakao.api.Kakao;
 public class KakaoConnectionFactory extends OAuth2ConnectionFactory<Kakao> {
 
 
-	public KakaoConnectionFactory(final String domain, final String appId) {
-		super("kakao", new KakaoServiceProvider(domain, appId), new KakaoAdapter());
+	public KakaoConnectionFactory(final String clientId) {
+		super(Kakao.PROVIDER_ID, new KakaoServiceProvider(clientId), new KakaoAdapter());
 	}
 
 

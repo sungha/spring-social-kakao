@@ -10,8 +10,8 @@ import org.springframework.social.oauth2.AbstractOAuth2ServiceProvider;
 public class KakaoServiceProvider extends AbstractOAuth2ServiceProvider<Kakao> {
 
 
-	public KakaoServiceProvider(final String domain, final String appId) {
-		super(new KakaoOAuth2Template(domain, appId));
+	public KakaoServiceProvider(final String clientId) {
+		super(new KakaoOAuth2Template(clientId));
 	}
 
 
