@@ -17,6 +17,9 @@
 		<repository>
 			<id>sungha-nexus-snapshot</id>
 			<url>http://steelheart.kr/nexus/content/repositories/snapshots</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
 		</repository>
 	</repositories>
 	
