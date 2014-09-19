@@ -15,13 +15,13 @@ public class KakaoTemplate extends AbstractKakaoOperations implements Kakao {
 	private TalkOperations	talkOperations;
 
 	private StoryOperations	storyOperations;
-	
+
 	private PushOperations	pushOperations;
 
 
 	public KakaoTemplate(final String accessToken) {
 		super(accessToken);
-		
+
 		userOperations = new UserTemplate(accessToken);
 		talkOperations = new TalkTemplate(accessToken);
 		storyOperations = new StoryTemplate(accessToken);
@@ -45,8 +45,8 @@ public class KakaoTemplate extends AbstractKakaoOperations implements Kakao {
 	public StoryOperations storyOperations() {
 		return storyOperations;
 	}
-	
-	
+
+
 	@Override
 	public PushOperations pushOperations() {
 		return pushOperations;

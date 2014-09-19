@@ -1,5 +1,6 @@
 package org.springframework.social.kakao.api.impl;
 
+
 import org.springframework.social.kakao.api.UserOperations;
 import org.springframework.social.kakao.api.model.KakaoUserProfile;
 

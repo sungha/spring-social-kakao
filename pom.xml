@@ -13,13 +13,48 @@
 	</parent>
 
 
+	<inceptionYear>2014</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>sungha</id>
+			<name>Sungha Jun</name>
+			<email>sh@steelheart.kr</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/sungha/spring-social-kakao</url>
+		<connection>scm:git:https://sungha@github.com/sungha/spring-social-kakao.git</connection>
+		<developerConnection>scm:git:git@github.com:sungha/spring-social-kakao.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/sungha/spring-social-kakao/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis</system>
+		<url>https://travis-ci.org/sungha/spring-social-kakao</url>
+	</ciManagement>
+
+
+
 	<repositories>
 		<repository>
 			<id>sungha-nexus-snapshot</id>
 			<url>http://steelheart.kr/nexus/content/repositories/snapshots</url>
-			<snapshots>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
 		</repository>
 	</repositories>
 
@@ -29,6 +64,18 @@
 		<java.target.version>1.6</java.target.version>
 	</properties>
 
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+			</plugin>
+
+
+		</plugins>
+	</build>
 
 
 	<dependencies>

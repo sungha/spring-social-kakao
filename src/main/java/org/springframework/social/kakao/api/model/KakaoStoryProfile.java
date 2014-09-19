@@ -19,13 +19,13 @@ public class KakaoStoryProfile {
 	private String			nickname;
 
 	@JsonProperty("profileImageURL")
-	private URL			profile;
+	private URL				profile;
 
 	@JsonProperty("thumbnailURL")
-	private URL			thumbnail;
+	private URL				thumbnail;
 
 	@JsonProperty("bgImageURL")
-	private URL			background;
+	private URL				background;
 
 	@JsonProperty("birthday")
 	private String			birthday;

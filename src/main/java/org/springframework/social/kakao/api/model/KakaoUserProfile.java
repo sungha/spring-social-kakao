@@ -46,7 +46,7 @@ public class KakaoUserProfile {
 	 * @author sungha
 	 */
 	@Data
-	public class Properties {
+	public static class Properties {
 
 		/** 대화명 */
 		@JsonProperty("nickname")
