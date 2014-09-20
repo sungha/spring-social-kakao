@@ -16,7 +16,7 @@ public abstract class AbstractKakaoOperations extends AbstractOAuth2ApiBinding {
 	}
 
 
-	String buildUri(String uri) {
+	protected String buildUri(String uri) {
 		return API_HOST + uri;
 	}
 

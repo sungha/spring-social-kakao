@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.social.kakao.api.StoryOperations;
 import org.springframework.social.kakao.api.model.KakaoStoryProfile;
 import org.springframework.social.kakao.api.model.StoryPostOptions;
-import org.springframework.social.kakao.api.model.StoryPostOptions.Permission;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;

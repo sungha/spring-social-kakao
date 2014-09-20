@@ -14,7 +14,7 @@ import org.springframework.social.kakao.api.model.KakaoUserProfile;
 public class KakaoAdapter implements ApiAdapter<Kakao> {
 
 	@Override
-	public boolean test(final Kakao api) {
+	public boolean test(final Kakao api) { // NOPMD - 단위테스트 메소드 아님
 		// TODO Auto-generated method stub
 		return false;
 	}

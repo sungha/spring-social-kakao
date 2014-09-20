@@ -15,7 +15,7 @@ public class StoryPostOptions {
 
 		private String	value;
 
-		private Permission(String value) {
+		Permission(String value) {
 			this.value = value;
 		}
 	}
@@ -24,13 +24,13 @@ public class StoryPostOptions {
 	private Permission	permission;
 
 
-	private String		android_exec_param;
-
-	private String		android_market_param;
-
-	private String		ios_exec_param;
-
-	private String		ios_market_param;
+//	private String		android_exec_param;
+//
+//	private String		android_market_param;
+//
+//	private String		ios_exec_param;
+//
+//	private String		ios_market_param;
 
 
 

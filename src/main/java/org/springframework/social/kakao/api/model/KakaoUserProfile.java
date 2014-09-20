@@ -18,11 +18,17 @@ public class KakaoUserProfile {
 
 	/** 사용자 고유식별번호 */
 	@JsonProperty("id")
-	private Integer		id;
+	private Integer				id;
 
 	/** 사용자 속성 정보 */
 	@JsonProperty("properties")
-	private Properties	properties	= new Properties();
+	private final Properties	properties;
+
+
+	public KakaoUserProfile() {
+		this.properties = new Properties();
+	}
+
 
 
 	public String getNickname() {
