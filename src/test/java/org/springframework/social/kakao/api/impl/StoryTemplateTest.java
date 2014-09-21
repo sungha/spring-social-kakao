@@ -4,10 +4,6 @@ package org.springframework.social.kakao.api.impl;
 import static org.fest.assertions.api.Assertions.*;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.*;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import lombok.extern.slf4j.Slf4j;
 
 import org.junit.Test;
@@ -25,7 +21,7 @@ import org.springframework.test.web.client.MockRestServiceServer;
 public class StoryTemplateTest {
 
 	@Test
-	public void testGetUserProfile() throws MalformedURLException {
+	public void testGetUserProfile() {
 		final Kakao kakao = new KakaoTemplate("");
 		final MockRestServiceServer server = MockRestServiceServer.createServer(((StoryTemplate) kakao.storyOperations()).getRestTemplate());
 
@@ -45,9 +41,9 @@ public class StoryTemplateTest {
 		log.debug("{}", profile);
 
 		assertThat(profile.getNickname()).isEqualTo("홍길동");
-		assertThat(profile.getProfile()).isEqualTo(new URL("http://xxx.kakao.com/.../aaa.jpg"));
-		assertThat(profile.getThumbnail()).isEqualTo(new URL("http://xxx.kakao.com/.../bbb.jpg"));
-		assertThat(profile.getBackground()).isEqualTo(new URL("http://xxx.kakao.com/.../ccc.jpg"));
+		assertThat(profile.getProfile()).isEqualTo("http://xxx.kakao.com/.../aaa.jpg");
+		assertThat(profile.getThumbnail()).isEqualTo("http://xxx.kakao.com/.../bbb.jpg");
+		assertThat(profile.getBackground()).isEqualTo("http://xxx.kakao.com/.../ccc.jpg");
 		assertThat(profile.getBirthday()).isEqualTo("1231");
 		assertThat(profile.getBirthdayType()).isEqualTo(KakaoStoryProfile.BirthdayType.SOLAR);
 	}

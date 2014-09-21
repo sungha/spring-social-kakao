@@ -5,7 +5,6 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -42,8 +41,8 @@ public class TalkTemplateTest {
 		log.debug("{}", profile);
 		
 		assertThat(profile.getNickname()).isEqualTo("John Doe");
-		assertThat(profile.getProfile()).isEqualTo(new URL("http://xxx.kakao.com/.../aaa.jpg"));
-		assertThat(profile.getThumbnail()).isEqualTo(new URL("http://xxx.kakao.com/.../bbb.jpg"));
+		assertThat(profile.getProfile()).isEqualTo("http://xxx.kakao.com/.../aaa.jpg");
+		assertThat(profile.getThumbnail()).isEqualTo("http://xxx.kakao.com/.../bbb.jpg");
 		assertThat(profile.getCountry()).isNull();
 	}
 

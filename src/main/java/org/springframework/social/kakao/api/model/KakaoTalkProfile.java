@@ -1,8 +1,6 @@
 package org.springframework.social.kakao.api.model;
 
 
-import java.net.URL;
-
 import lombok.Data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,11 +22,11 @@ public class KakaoTalkProfile {
 
 	/** 프로필 이미지 원본 URL */
 	@JsonProperty("profileImageURL")
-	private URL		profile;
+	private String	profile;
 
 	/** 프로필 이미지 썸네일 URL */
 	@JsonProperty("thumbnailURL")
-	private URL		thumbnail;
+	private String	thumbnail;
 
 	/** 국가 */
 	@JsonProperty("countryISO")
