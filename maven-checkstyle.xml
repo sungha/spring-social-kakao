@@ -5,7 +5,7 @@
 	This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-	Checkstyle-Configuration: sh-checkstyle
+	Checkstyle-Configuration: maven-checkstyle
 	Description:
 	Checkstyle configuration that checks the sun coding conventions.
 -->

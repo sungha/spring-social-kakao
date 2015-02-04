@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="sh-pmd" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="maven-pmd" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
 
+	<description>
+		sungha's MPD RuleSet
+	</description>
+	
 
 	<!--
 		<rule ref="rulesets/ecmascript/basic.xml/AssignmentInOperand"/>
@@ -71,7 +75,7 @@
 	<rule ref="rulesets/java/codesize.xml/NcssMethodCount" />
 	<rule ref="rulesets/java/codesize.xml/NcssTypeCount" />
 	<!-- <rule ref="rulesets/java/codesize.xml/TooManyFields" /> -->
-	<rule ref="rulesets/java/codesize.xml/TooManyMethods" />
+	<!-- <rule ref="rulesets/java/codesize.xml/TooManyMethods" /> -->
 
 	<!--
 		<rule ref="rulesets/java/comments.xml/CommentContent"/>
@@ -104,7 +108,7 @@
 	<rule ref="rulesets/java/controversial.xml/UseObjectForClearerAPI" />
 
 	<rule ref="rulesets/java/coupling.xml/CouplingBetweenObjects" />
-	<rule ref="rulesets/java/coupling.xml/ExcessiveImports" />
+	<!-- <rule ref="rulesets/java/coupling.xml/ExcessiveImports" /> -->
 	<!-- <rule ref="rulesets/java/coupling.xml/LawOfDemeter"/> -->
 	<rule ref="rulesets/java/coupling.xml/LooseCoupling" />
 	<!-- <rule ref="rulesets/java/coupling.xml/LoosePackageCoupling" /> -->
