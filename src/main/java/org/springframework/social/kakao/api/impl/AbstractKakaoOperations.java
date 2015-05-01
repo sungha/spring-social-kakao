@@ -8,7 +8,7 @@ import org.springframework.social.oauth2.AbstractOAuth2ApiBinding;
 
 public abstract class AbstractKakaoOperations extends AbstractOAuth2ApiBinding {
 
-	private static final String	API_HOST	= "https://kapi.kakao.com";
+	protected static final String	API_HOST	= "https://kapi.kakao.com";
 
 
 	public AbstractKakaoOperations(final String accessToken) {

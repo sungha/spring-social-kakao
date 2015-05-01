@@ -2,15 +2,14 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>kr.steelheart</groupId>
-	<artifactId>spring-social-kakao</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-
 	<parent>
 		<groupId>kr.steelheart</groupId>
 		<artifactId>kr.steelheart.platform</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
+
+
+	<artifactId>spring-social-kakao</artifactId>
 
 
 	<inceptionYear>2014</inceptionYear>
@@ -60,8 +59,8 @@
 
 
 	<properties>
-		<java.source.version>1.6</java.source.version>
-		<java.target.version>1.6</java.target.version>
+		<java.source.version>1.7</java.source.version>
+		<java.target.version>1.7</java.target.version>
 	</properties>
 
 

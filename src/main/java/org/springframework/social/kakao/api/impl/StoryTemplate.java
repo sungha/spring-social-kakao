@@ -2,6 +2,8 @@ package org.springframework.social.kakao.api.impl;
 
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.core.ParameterizedTypeReference;
@@ -11,11 +13,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.social.kakao.api.StoryOperations;
+import org.springframework.social.kakao.api.model.KakaoStoryPost;
 import org.springframework.social.kakao.api.model.KakaoStoryProfile;
 import org.springframework.social.kakao.api.model.StoryPostOptions;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 
 
@@ -25,6 +29,7 @@ public final class StoryTemplate extends AbstractKakaoOperations implements Stor
 	public StoryTemplate(final String accessToken) {
 		super(accessToken);
 	}
+
 
 
 	@Override
@@ -101,5 +106,77 @@ public final class StoryTemplate extends AbstractKakaoOperations implements Stor
 
 
 
+	@Override
+	public boolean isStoryUser() {
+		@SuppressWarnings("unchecked")
+		final Map<String, Boolean> result = getRestTemplate().getForObject(buildUri("/v1/api/story/isstoryuser"), HashMap.class);
+		final Boolean re = (Boolean) result.get("isStoryUser");
+
+		if (re != null) {
+			return re.booleanValue();
+		}
+
+		return false;
+	}
+
+
+
+	@Override
+	public List<KakaoStoryPost> myStories(String lastId) {
+		final RestTemplate template = getRestTemplate();
+		final String url = buildUri("/v1/api/story/mystories");
+
+		ResponseEntity<List<KakaoStoryPost>> result = template.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<KakaoStoryPost>>() {
+		});
+
+		return result.getBody();
+	}
+
+
+
+	@Override
+	public KakaoStoryPost myStory(String id) {
+		final RestTemplate template = getRestTemplate();
+		final String url = buildUri("/v1/api/story/mystory");
+
+		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url).queryParam("id", id);
+
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+		HttpEntity<?> entity = new HttpEntity<>(null, headers);
+
+		ResponseEntity<KakaoStoryPost> result = template.exchange(builder.build().toUri(), HttpMethod.GET, entity, new ParameterizedTypeReference<KakaoStoryPost>() {
+		});
+
+		return result.getBody();
+	}
+
+
+
+	@Override
+	public void deleteMyStory(String id) {
+		// TODO Auto-generated method stub
+
+	}
+
+
+	public static void main(String[] args) {
+		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("https://api.kakao.com");
+		
+		builder.path("/v1/api");
+		builder.path("/story");
+		builder.path("/mystory");
+		
+		builder.queryParam("id", "AAAA.BBBBB");
+		
+		System.out.println(builder.build().toUri());
+		
+	}
+
 
 }
+
+
+
