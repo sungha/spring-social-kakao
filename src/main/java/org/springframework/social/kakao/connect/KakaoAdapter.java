@@ -7,6 +7,7 @@ import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.kakao.api.Kakao;
+import org.springframework.social.kakao.api.model.KakaoStoryProfile;
 import org.springframework.social.kakao.api.model.KakaoTalkProfile;
 import org.springframework.social.kakao.api.model.KakaoUserProfile;
 
@@ -14,21 +15,21 @@ import org.springframework.social.kakao.api.model.KakaoUserProfile;
 public class KakaoAdapter implements ApiAdapter<Kakao> {
 
 	@Override
-	public boolean test(final Kakao api) { // NOPMD - 단위테스트 메소드 아님
-		// TODO Auto-generated method stub
-		return false;
+	public boolean test(final Kakao api) {
+		return api.isAuthorized();
 	}
 
 	@Override
 	public void setConnectionValues(final Kakao api, final ConnectionValues values) {
 		KakaoUserProfile userProfile = api.userOperations().getProfile();
 		KakaoTalkProfile talkProfile = api.talkOperations().getProfile();
-
+		KakaoStoryProfile storyProfile = api.storyOperations().getProfile();
+		
 		values.setProviderUserId(Integer.toString(userProfile.getId()));
 		values.setDisplayName(talkProfile.getNickname());
 
-		values.setImageUrl(talkProfile.getProfile().toString());
-		values.setProfileUrl(null); // 아직 카카오스토리 웹버전에 대한 링크주소 또는 아이디를 가져오는 API는 없는듯.
+		values.setImageUrl(talkProfile.getProfile());
+		values.setProfileUrl(storyProfile.getPermalink());
 	}
 
 

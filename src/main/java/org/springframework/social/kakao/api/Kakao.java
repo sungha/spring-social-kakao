@@ -1,5 +1,7 @@
 package org.springframework.social.kakao.api;
 
+import org.springframework.social.ApiBinding;
+
 
 
 
@@ -10,7 +12,7 @@ package org.springframework.social.kakao.api;
  * 
  * @author sungha
  */
-public interface Kakao {
+public interface Kakao extends ApiBinding {
 
 	String	PROVIDER_ID	= "kakao";
 

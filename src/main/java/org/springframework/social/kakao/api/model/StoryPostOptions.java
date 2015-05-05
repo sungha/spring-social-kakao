@@ -20,7 +20,7 @@ public class StoryPostOptions {
 		}
 	}
 
-
+	
 	private Permission	permission;
 
 

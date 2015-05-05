@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -63,11 +64,50 @@ public final class StoryTemplate extends AbstractKakaoOperations implements Stor
 
 	@Override
 	public String postPhoto(StoryPostOptions options, String content, File... files) {
+		final List<String> uploaded = upload(files);
+
+		final String postedId = post(content, uploaded, options);
+		
+		return postedId;
+	}
+	
+
+//	array of like this: "/aaaaa/bBbbbBbbbB/CCcCcC1ccCCcCCCCCCcc1c/img.png?width=150&height=150"
+	private List<String> upload(File... files) {
+		RestTemplate template = getRestTemplate();
+
+		LinkedMultiValueMap<String, Object> request = new LinkedMultiValueMap<>();
+		
+		assert files != null && files.length <= 5;
+		for (File file: files) {
+			request.add("file", new FileSystemResource(file));
+		}
+		
+		String uri = buildUri("/v1/api/story/upload/multi");
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+
+		HttpEntity<LinkedMultiValueMap<String, Object>> entity = new HttpEntity<LinkedMultiValueMap<String, Object>>(request, headers);
+
+		ResponseEntity<List<String>> result = template.exchange(uri, HttpMethod.POST, entity, new ParameterizedTypeReference<List<String>>() {
+		});
+
+		return result.getBody();
+	}
+	
+	
+	private String post(final String content, final List<String> files, StoryPostOptions options) {
 		RestTemplate template = getRestTemplate();
 
 		MultiValueMap<String, Object> request = new LinkedMultiValueMap<String, Object>();
+		
+		assert files != null && files.size() <= 5;
+		request.add("image_url_list", files); // TODO json
+		
 		request.set("content", content);
 		request.set("permission", options.getPermission().getValue());
+
 
 		String uri = buildUri("/v1/api/story/post/photo");
 

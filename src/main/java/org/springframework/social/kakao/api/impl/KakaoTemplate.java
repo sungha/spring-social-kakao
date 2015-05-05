@@ -10,11 +10,14 @@ import org.springframework.social.kakao.api.UserOperations;
 
 public class KakaoTemplate extends AbstractKakaoOperations implements Kakao {
 
-	private final UserOperations	user;
-	private final TalkOperations	talk;
-	private final StoryOperations	story;
-	private final PushOperations	push;
+	private UserOperations	user;
+	private TalkOperations	talk;
+	private StoryOperations	story;
+	private PushOperations	push;
 
+	public KakaoTemplate() {
+		super(null);
+	}
 
 	public KakaoTemplate(final String accessToken) {
 		super(accessToken);
